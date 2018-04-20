@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "15004655-25f3-496b-b629-058343e19fd2",
+		"name": "GoWebSvc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/user",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/user/2",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userid\":\"9\",\"name\":\"Nic2\",\"favorites\":[2,3]}"
+				},
+				"url": {
+					"raw": "http://{{baseurl}}/user/9",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/user/2",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUserFav",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/user/1/fav/10",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"1",
+						"fav",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUserLike",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "like",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{baseurl}}/user/2/like/10",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"2",
+						"like",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUserFav",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/user/1/fav/10",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"user",
+						"1",
+						"fav",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRepos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/github/repo",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"github",
+						"repo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryRepos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{baseurl}}/github/terraform",
+					"protocol": "http",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"github",
+						"terraform"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,9 +1,9 @@
 # repoquery
 This is a Go App that allows users to filter Github data using the github.com API (api.github.com). 
  
-•	It has a RESTful API in GO that filters public repos using the Github API
-•	Allow users to favorite or like repos from the filtered repo list
-•	Provide ability to view & edit the user’s favorite repos
+•	It has a RESTful API in GO that filters public repos using the Github API  
+•	Allow users to favorite or like repos from the filtered repo list  
+•	Provide ability to view & edit the user’s favorite repos  
 
 ## USAGE :
   go run main.go
@@ -14,6 +14,8 @@ This is a Go App that allows users to filter Github data using the github.com AP
 
   This can be tested using Postman, postman collection is attached as GoWebSvc.postman_collection.json.
 
+  This uses mux from Gorilla library tools for routing. It requires installation of mux    
+   go get -u github.com/gorilla/mux
 
 ### APIs
 
@@ -68,27 +70,33 @@ http://{{baseurl}}/user/{userid}/fav/{favid}
 
 example: http://{{baseurl}}/user/1/fav/93446075 will remove fav with github repo id of 93446075, if it exists for user with id of 1 and return updated user collection.
 
+#### Mark Repo Liked by User (POST)
+  
+http://{{baseurl}}/user/{userid}/like/{likeid}
+
+example: http://{{baseurl}}/user/2/like/130278929 will mark github repo id of 130278929 to user with id of 2 and return updated user collection.
+
 #### User Json structure in memory
 
-[
-  {
-    "userid": "1",
-    "name": "Nic",
-    "favorites": [
-      126195231,
-      93446075
-    ]
-  },
-  {
-    "userid": "2",
-    "name": "Mary",
-    "favorites": [
-      126195231,
-      120045621
-    ],
-    "likes": [
-      93446075,
-      120045621
-    ]
-  }
-]
+        [
+        {
+            "userid": "1",
+            "name": "Nic",
+            "favorites": [
+            126195231,
+            93446075
+            ]
+        },
+        {
+            "userid": "2",
+            "name": "Mary",
+            "favorites": [
+            126195231,
+            120045621
+            ],
+            "likes": [
+            93446075,
+            120045621
+            ]
+        }
+        ]
